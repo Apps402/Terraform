@@ -3,3 +3,9 @@ resource "azurerm_resource_group" "rg01" {
     location = "West Europe"
   
 }
+
+resource "azurerm_resource_group" "rg10" {
+    name = "RG100"
+    location = "West US"
+  
+}
