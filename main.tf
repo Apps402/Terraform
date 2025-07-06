@@ -4,8 +4,8 @@ resource "azurerm_resource_group" "rg01" {
   
 }
 
-resource "azurerm_resource_group" "ap100" {
-    name = "apps100"
+resource "azurerm_resource_group" "td100" {
+    name = "td100"
     location = "Central India"
   
 }
