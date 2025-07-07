@@ -16,3 +16,9 @@ resource "azurerm_resource_group" "rg10" {
     location = "West US"
  
 }
+
+resource "azurerm_resource_group" "rg101" {
+    name = "RG101"
+    location = "West US"
+ 
+}
