@@ -5,11 +5,6 @@ resource "azurerm_resource_group" "rg01" {
 }
 
 
-resource "azurerm_virtual_network" "vnet" {
-    name = "vnet"
-    location = "West Europe"
-    resource_group_name = "Appsrg"
-}
 
 resource "azurerm_resource_group" "rg10" {
     name = "RG100"
