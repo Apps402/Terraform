@@ -1,0 +1,19 @@
+name: "Apps Workflow"
+
+on:
+  push:
+    branches:
+      - 'feature/*'
+      - 'main'
+jobs:
+  AppsJob
+    name: First Job
+    runs-on: DESKTOP-R9MROJS
+    steps:
+    - name: First Step of Job1
+      run: echo Hi Apps!
+
+    - name: Second Step of Job1
+      run: echo Hi Aparna!
+      
+      
