@@ -6,7 +6,7 @@ on:
       - 'feature/*'
       - 'main'
 jobs:
-  AppsJob
+  AppsJob:
     name: First Job
     runs-on: DESKTOP-R9MROJS
     steps:
