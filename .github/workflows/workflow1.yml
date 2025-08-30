@@ -8,7 +8,7 @@ on:
 jobs:
   AppsJob:
     name: First Job
-    runs-on: DESKTOP-R9MROJS
+    runs-on: self-hosted
     steps:
     - name: First Step of Job1
       run: echo Hi Apps!
