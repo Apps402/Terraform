@@ -1,12 +1,11 @@
-name: Infra Pipeline
+name: "Infra Pipeline"
 
 on: workflow_dispatch
 
-jobs:
-  Terraformjob:
+jobs: 
+  terraform-init-plan:
     runs-on: self-hosted
-    
-    steps:
+    steps: 
       - name: Checkout
         uses: actions/checkout@v5.0.0
     
