@@ -1,11 +1,17 @@
-name: "Infra Pipeline"
+name: "Apps Workflow"
 
-on: workflow_dispatch
-
+on:
+  push:
+    branches:
+      - 'feature/*'
+      - 'main'
 jobs:
-  terraform_init_plan:
+  AppsJob:
+    name: First Job
     runs-on: self-hosted
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5.0.0
-      
+    - name: First Step of Job1
+      run: echo Hi Apps!
+
+    - name: Second Step of Job1
+      run: echo Hi Aparna!
