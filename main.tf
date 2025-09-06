@@ -2,10 +2,10 @@ terraform {
     required_providers{
         azurerm = {
                 source = "hashicorp/azurerm"
-                value = "4.42"
+                version = "4.42"
                 }
     backend "azurerm"{
-        resource_group = "backendrgap"
+        resource_group_name = "backendrgap"
         storage_account_name = "backendstgap19"
         container_name = "apstate"
         key = "state.tf"
