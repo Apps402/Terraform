@@ -23,9 +23,10 @@ jobs:
         
       - name: Terraform Init
         id: init
-        ARM_CLIENT_ID: 78e8a8f8-bd08-4445-a5a6-788de461b87d 
-        ARM_TENANT_ID: f09cd6a0-7740-4a44-a8a5-c9e688f5f0fc
-        ARM_SUBSCRIPTION_ID: 9f199aee-1ad7-464f-bd74-4b88ef990086
+        env:
+          ARM_CLIENT_ID: 78e8a8f8-bd08-4445-a5a6-788de461b87d 
+          ARM_TENANT_ID: f09cd6a0-7740-4a44-a8a5-c9e688f5f0fc
+          ARM_SUBSCRIPTION_ID: 9f199aee-1ad7-464f-bd74-4b88ef990086
         run: terraform init -input=false  
         working-directory: .
 
