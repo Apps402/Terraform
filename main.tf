@@ -1,29 +1,29 @@
-resource "azurerm_resource_group" "rg01" {
-    name = "Appsrg"
-    location = "West Europe"
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "4.41"
+    }
+  }
+
+  backend "azurerm" {
+    resource_group_name   = "backendrgap"
+    storage_account_name  = "backendstgap19"
+    container_name        = "apstate"
+    key                   = "state.tf"
+  }
+}
+
+provider "azurerm" {
+  features {}
+  subscription_id = "9f199aee-1ad7-464f-bd74-4b88ef990086"
   
 }
 
-
-
-resource "azurerm_resource_group" "rg10" {
-    name = "RG100"
-    location = "West US"
- 
+resource "azurerm_resource_group" "rg01" {
+  name     = "Appsrg"
+  location = "West Europe"
 }
 
-resource "azurerm_resource_group" "rg101" {
-    name = "RG101"
-    location = "West US"
- 
-}
 
-resource "azurerm_resource_group" "rg204" {
-    name = "RG204"
-    location = "East US"
-}
-resource "azurerm_resource_group" "rg202" {
-    name = "RG101"
-    location = "West US"
- 
-}
+
