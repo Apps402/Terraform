@@ -19,15 +19,8 @@ jobs:
           client-id: 78e8a8f8-bd08-4445-a5a6-788de461b87d
           tenant-id: f09cd6a0-7740-4a44-a8a5-c9e688f5f0fc
           subscription-id: 9f199aee-1ad7-464f-bd74-4b88ef990086
-
-      - name: Set Terraform AzureRM credentials
-        run: |
-          echo "ARM_CLIENT_ID=${{ secrets.AZURE_CLIENT_ID }}" >> $GITHUB_ENV
-          echo "ARM_TENANT_ID=${{ secrets.AZURE_TENANT_ID }}" >> $GITHUB_ENV
-          echo "ARM_SUBSCRIPTION_ID=${{ secrets.AZURE_SUBSCRIPTION_ID }}" >> $GITHUB_ENV
-          echo "ARM_USE_OIDC=true" >> $GITHUB_ENV
-    
-        
+          client-secret: BiI8Q~PU2NNVClpBx66CsOg8EmwradiMxNaPBash
+       
       - name: Terraform Init
         id: init
         run: terraform init -input=false  
