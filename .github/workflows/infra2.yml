@@ -12,21 +12,22 @@ jobs:
     steps: 
       - name: Checkout
         uses: actions/checkout@v5.0.0
-    
+
       - name: Azure Login
+        id: azure_login
         uses: Azure/login@v2.3.0
         with:
-          client-id: c9a5c4d4-d209-4e0c-b69e-9deb6779744c
+          client-id: ac3df207-24ec-4ecc-936d-8c483f273e6e
           tenant-id: f09cd6a0-7740-4a44-a8a5-c9e688f5f0fc
           subscription-id: 9f199aee-1ad7-464f-bd74-4b88ef990086
-            
-      - name: Terraform fmt
-        id: fmt
-        run: terraform fmt -check
-        continue-on-error: true
-        working-directory: .
+    
         
       - name: Terraform Init
         id: init
         run: terraform init -input=false  
         working-directory: .
+        env:
+          ARM_CLIENT_ID: ac3df207-24ec-4ecc-936d-8c483f273e6e
+          ARM_SUBSCRIPTION_ID: 9f199aee-1ad7-464f-bd74-4b88ef990086
+          ARM_TENANT_ID: f09cd6a0-7740-4a44-a8a5-c9e688f5f0fc
+          ARM_USE_OIDC: true
