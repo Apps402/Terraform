@@ -31,6 +31,17 @@ jobs:
           ARM_TENANT_ID: 2ba64190-34b7-4c53-a3b5-39b48fc97ee1
           ARM_USE_OIDC: true
 
+
+      -  name: Terraform Validate
+         id: validate
+         run: terraform validate -no-color
+         working-directory: .        
+      
+      - name: Terraform Plan
+        id: plan
+        run: terraform plan -no-color -input=false
+        continue-on-error: true
+        working-directory: .   
       
 
         
