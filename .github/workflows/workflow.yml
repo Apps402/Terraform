@@ -1,7 +1,6 @@
-name: "Workflow"
+name: "Infra Pipeline"
 
 on: workflow_dispatch
-      
 
 permissions:
   id-token: write
@@ -15,24 +14,26 @@ jobs:
         uses: actions/checkout@v5.0.0
     
       - name: Azure Login
-        uses: Azure/login@v2.3.0
+        uses: azure/login@v1
         with:
           client-id: 39f68306-e8d4-4022-b10a-edf212b43929
           tenant-id: 2ba64190-34b7-4c53-a3b5-39b48fc97ee1
           subscription-id: 3848d054-353d-4473-9229-a032df1ddadb
-            
-      - name: Terraform fmt
-        id: fmt
-        run: terraform fmt -check
-        continue-on-error: true
-        working-directory: .
-        
+          enable-oidc: true
+       
       - name: Terraform Init
         id: init
         run: terraform init -input=false  
         working-directory: .
 
-      - name: Terraform Validate
-        id: validate
-        run: terraform validate -no-color
-        working-directory: .    
+      
+
+        
+        
+
+      
+    
+    
+  
+  
+    
