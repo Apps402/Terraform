@@ -17,9 +17,9 @@ jobs:
         id: azure_login
         uses: Azure/login@v2.3.0
         with:
-          client-id: ac3df207-24ec-4ecc-936d-8c483f273e6e
-          tenant-id: f09cd6a0-7740-4a44-a8a5-c9e688f5f0fc
-          subscription-id: 9f199aee-1ad7-464f-bd74-4b88ef990086
+          client-id: 39f68306-e8d4-4022-b10a-edf212b43929
+          tenant-id: 2ba64190-34b7-4c53-a3b5-39b48fc97ee1
+          subscription-id: 3848d054-353d-4473-9229-a032df1ddadb
     
         
       - name: Terraform Init
@@ -27,7 +27,7 @@ jobs:
         run: terraform init -input=false  
         working-directory: .
         env:
-          ARM_CLIENT_ID: ac3df207-24ec-4ecc-936d-8c483f273e6e
-          ARM_SUBSCRIPTION_ID: 9f199aee-1ad7-464f-bd74-4b88ef990086
-          ARM_TENANT_ID: f09cd6a0-7740-4a44-a8a5-c9e688f5f0fc
+          ARM_CLIENT_ID: 39f68306-e8d4-4022-b10a-edf212b43929
+          ARM_SUBSCRIPTION_ID: 3848d054-353d-4473-9229-a032df1ddadb
+          ARM_TENANT_ID: 2ba64190-34b7-4c53-a3b5-39b48fc97ee1
           ARM_USE_OIDC: true
