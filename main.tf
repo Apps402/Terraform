@@ -8,7 +8,7 @@ terraform {
 
   backend "azurerm" {
     resource_group_name   = "backendrgap"
-    storage_account_name  = "backendstgap19"
+    storage_account_name  = "backendstgap19000"
     container_name        = "apstate"
     key                   = "state.tf"
   }
