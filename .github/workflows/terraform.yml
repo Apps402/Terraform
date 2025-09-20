@@ -20,10 +20,12 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      - name: Print env
-        Get-ChildItem Env: | Where-Object { $_.Name -like "ARM_*" }
+      - name: Print ARM Environment Variables (Windows PowerShell)
+        shell: powershell
+        run: |
+          Get-ChildItem Env: | Where-Object { $_.Name -like "ARM_*" }
 
-              
+      
       - name: Terraform Init
         id: init
         run: terraform init -input=false  
