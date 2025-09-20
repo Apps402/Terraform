@@ -21,7 +21,8 @@ jobs:
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: Print env
-        run: env | grep ARM_
+        Get-ChildItem Env: | Where-Object { $_.Name -like "ARM_*" }
+
               
       - name: Terraform Init
         id: init
