@@ -15,14 +15,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5.0.0
 
+      - name: Terraform Init
+        id: init
+        run: terraform init -input=false
+
       - name: Terraform fmt
         id: fmt
         run: terraform fmt -check
         continue-on-error: true
-
-      - name: Terraform Init
-        id: init
-        run: terraform init -input=false
+  
 
       - name: Terraform Validate
         id: validate
@@ -32,4 +33,30 @@ jobs:
         id: plan
         run: terraform plan -no-color -input=false
         continue-on-error: true
+
+  terraform_apply:
+    runs-on: self-hosted
+    if: github.ref == 'refs/heads/main'
+    needs: terraform_init_plan
+    environment: Production
+    env:
+        ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+        ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+        ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        ARM_USE_OIDC: true
+
+    steps: 
+       - name: Checkout
+         uses: actions/checkout@v5.0.0
+
+       - name: Terraform Init
+         id: init
+         run: terraform init -input=false
+
+       - name: Terraform Apply
+         id: apply
+         run: terraform apply --auto-approve
+         continue-on-error: true
+         working-directory: . 
+    
 
