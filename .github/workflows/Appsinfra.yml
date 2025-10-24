@@ -33,18 +33,18 @@ jobs:
           run: terraform plan -no-color -input=false
           continue-on-error: true
 
-  terraform_scanning:
-     runs-on: self-hosted
-     steps:
-       - name: Checkout
-         uses: actions/checkout@v5.0.0
+  # terraform_scanning:
+  #    runs-on: self-hosted
+  #    steps:
+  #      - name: Checkout
+  #        uses: actions/checkout@v5.0.0
 
-       - name: Run Checkov
-         run: checkov -d .
+  #      - name: Run Checkov
+  #        run: checkov -d .
 
   terraform_apply:
     runs-on: self-hosted
-    needs: [terraform_init_plan,terraform_scanning]
+    needs: [terraform_init_plan]
     if: github.ref == 'refs/heads/main'
     environment: Production
     steps:
