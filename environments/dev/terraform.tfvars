@@ -15,4 +15,4 @@ sql_dbloc = "West US"
 
 aks_name = "apcluster"
 aks_loc = "West US"
-dns = "aks_dev_todo"
+dns = "aksdevtodo"
