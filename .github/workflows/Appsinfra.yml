@@ -35,40 +35,40 @@ jobs:
 
   terraform_scanning:
      runs-on: self-hosted
-       steps:
-         - name: Checkout
-           uses: actions/checkout@v5.0.0
+     steps:
+       - name: Checkout
+         uses: actions/checkout@v5.0.0
 
-         - name: Run Checkov
-           uses: bridgecrewio/checkov-action@v12
-           with:
-             directory: .
-             framework: terraform  # Scan Terraform only
-             output_format: sarif
-             output_file_path: results.sarif
+       - name: Run Checkov
+         uses: bridgecrewio/checkov-action@v12
+         with:
+           directory: .
+           framework: terraform  # Scan Terraform only
+           output_format: sarif
+           output_file_path: results.sarif
 
   terraform_apply:
     runs-on: self-hosted
     needs: [terraform_init_plan,terraform_scanning]
     if: github.ref == 'refs/heads/main'
     environment: Production
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v5.0.0
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5.0.0
 
-        - name: Checkout
-          uses: actions/checkout@v5.0.0
+      - name: Checkout
+        uses: actions/checkout@v5.0.0
 
-        - name: Terraform Init
-          id: init
-          run: terraform init -input=false
-          working-directory: .
+      - name: Terraform Init
+        id: init
+        run: terraform init -input=false
+        working-directory: .
 
-       - name: Terraform Apply
-         id: apply
-         run: terraform apply --auto-approve
-         continue-on-error: true
-         working-directory: . 
+      - name: Terraform Apply
+        id: apply
+        run: terraform apply --auto-approve
+        continue-on-error: true
+        working-directory: . 
 
         
         
