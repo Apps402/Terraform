@@ -9,7 +9,7 @@ module "rg" {
     source = "../../modules/resource_group"
     rg_name = var.rg_name
     rg_loc = var.rg_loc
-    rg_tags = locals.common_tags
+    rg_tags = local.common_tags
 }
 
 module "acr" {
