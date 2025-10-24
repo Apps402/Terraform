@@ -1,7 +1,7 @@
 rg_name = "Appsinfrarg"
 rg_loc = "West US"
 
-acr_name = "AppsACR"
+acr_name = "appsacr000100090"
 acr_loc = "West US"
 acr_sku = "Premium"
 
