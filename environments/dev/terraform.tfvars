@@ -5,7 +5,7 @@ acr_name = "appsacr000100090"
 acr_loc = "West US"
 acr_sku = "Premium"
 
-sql_name = "apsqlserver"
+sql_name = "apsqlserver0000011"
 sql_loc = "West US"
 sql_username = "devops"
 sql_pwd = "deVooopps@1234!234567890"
