@@ -40,12 +40,7 @@ jobs:
          uses: actions/checkout@v5.0.0
 
        - name: Run Checkov
-         uses: bridgecrewio/checkov-action@v12
-         with:
-           directory: .
-           framework: terraform  # Scan Terraform only
-           output_format: sarif
-           output_file_path: results.sarif
+         run: checkov -d .
 
   terraform_apply:
     runs-on: self-hosted
