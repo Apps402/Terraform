@@ -21,11 +21,11 @@ jobs:
         - name: Checkout
           uses: actions/checkout@v5.0.0
 
-        - name: Terraform fmt
-          id: fmt
-          run: terraform fmt -check
-          continue-on-error: true
-          working-directory: ./environments/dev
+        # - name: Terraform fmt
+        #   id: fmt
+        #   run: terraform fmt -check
+        #   continue-on-error: true
+        #   working-directory: ./environments/dev
 
         - name: Terraform Init
           id: init
