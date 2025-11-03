@@ -10,7 +10,7 @@ rgs = {
 
 acr = {
   acr1 = {
-    name = "appsacr"
+    name = "appsacrrrrrr"
     rg_name =  "Appsinfrarg"
     location = "West US"
     sku = "Premium"
@@ -46,7 +46,7 @@ aks = {
             d1 ={
                 name = "default"
                 node_count = 1
-                vm_size = "Standard_D2_v2"
+                vm_size = "Standard_a2_v2"
             }
         }
         cluster_tags = {
