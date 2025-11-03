@@ -1,40 +1,51 @@
-variable "rg_name" {}
-
-variable "rg_loc" {}
-
-variable "acr_name" {}
-
-variable "acr_loc" {}
-
-
-
-variable "acr_sku" {}
-
-variable "acr_tags" {}
-
-variable "sql_name" {}
+variable "rgs" {
+    type = map(object({
+        name = string
+        location = string
+        tags = map(string)
+    }))
+  
+}
 
 
-variable "sql_loc" {}
+variable "sql" {
+    type = map(object({
+        sql_server_name = string
+        rg_name = string
+        location = string
+        username = string
+        password = string
+        sqldb_name = string
 
-variable "sql_username" {}
-
-variable "sql_pwd" {}
-
-variable "sql_db" {}
-
-
-
-variable "sql_dbloc" {}
-
-variable "sql_db_id" {}
-
-variable "aks_name" {}
-
-variable "aks_loc" {}
+    }))
+  
+}
 
 
+variable "aks" {
+    type = map(object({
+        name = string
+        location = string
+        rg_name = string
+        dns_prefix = string
+        default_node_pool = map(object({
+            name = string
+            node_count = number
+            vm_size = string
+        }))
+        cluster_tags = map(string)
 
-variable "dns" {}
+    }))
+  
+}
 
-variable "cluster_tags" {}
+variable "acr" {
+    type = map(object({
+        name = string
+        rg_name = string
+        location = string
+        sku = string
+        tags = map(string)
+    }))
+  
+}
