@@ -7,7 +7,6 @@ variable "rgs" {
   
 }
 
-
 variable "sql" {
     type = map(object({
         sql_server_name = string
