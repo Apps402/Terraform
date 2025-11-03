@@ -1,15 +1,19 @@
-variable "aks_name" {}
+variable "aks" {
+    type = map(object({
+        name = string
+        location = string
+        rg_name = string
+        dns_prefix = string
+        default_node_pool = map(object({
+            name = string
+            node_count = number
+            vm_size = string
+        }))
+        cluster_tags = map(string)
 
-variable "aks_loc" {}
-
-variable "rg_name" {
+    }))
   
 }
 
-variable "dns" {
-  
-}
 
-variable "cluster_tags" {
-  
-}
+
