@@ -25,9 +25,9 @@ module "acr" {
 #}
 
 
-#module "aks_cluster" {
- #   depends_on = [ module.rg ]
- #   source = "../../modules/kubernetes cluster"
- #   aks = var.aks
+module "aks_cluster" {
+    depends_on = [ module.rg ]
+    source = "../../modules/kubernetes cluster"
+    aks = var.aks
   
-#}
+}
