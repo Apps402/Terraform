@@ -17,12 +17,12 @@ module "acr" {
     acr = var.acr
 }
 
-#module "sql" {
-#   depends_on = [ module.rg ]
-#   source = "../../modules/sql"
-#   sql = var.sql
+module "sql" {
+   depends_on = [ module.rg ]
+   source = "../../modules/sql"
+   sql = var.sql
 
-#}
+}
 
 
 module "aks_cluster" {
