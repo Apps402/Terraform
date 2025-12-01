@@ -42,7 +42,6 @@ module "aks_cluster" {
 #    depends_on = [ module.rg ]
 #    source = "../../modules/azure_keyvault"
 #    keyvault = var.keyvault
-  
 #}
 
 
