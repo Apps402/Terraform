@@ -48,6 +48,5 @@ module "aks_cluster" {
 #    depends_on = [ module.rg ]
 #    source = "../../modules/storage"
 #    stg = var.stg
-  
 #}
 
