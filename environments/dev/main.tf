@@ -10,11 +10,11 @@ module "rg" {
     rgs = var.rgs   
 }
 
-module "acr" {
-    depends_on = [ module.rg ]
-    source = "../../modules/container_registry"
-    acr = var.acr
-}
+#module "acr" {
+ #   depends_on = [ module.rg ]
+  #  source = "../../modules/container_registry"
+   # acr = var.acr
+#}
 
 module "sql" {
    depends_on = [ module.rg ]
@@ -24,12 +24,12 @@ module "sql" {
 }
 
 
-module "aks_cluster" {
-    depends_on = [ module.rg ]
-    source = "../../modules/kubernetes cluster"
-    aks = var.aks
+#module "aks_cluster" {
+ #   depends_on = [ module.rg ]
+  #  source = "../../modules/kubernetes cluster"
+   # aks = var.aks
   
-}
+#}
 
 #module "vnet" {
  #   depends_on = [ module.rg ]
